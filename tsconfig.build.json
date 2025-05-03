@@ -6,7 +6,7 @@
     "rootDir": "./dist/src",
     "paths": {
       "test-tewst/*": ["dist/src/*"],
-      "test-tewst": ["dist/src/index.ts"],
+      "test-tewst": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
