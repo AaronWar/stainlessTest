@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/test-tewst-typescript.git
+npm install git+ssh://git@github.com:AaronWar/stainlessTest.git
 ```
 
 > [!NOTE]
@@ -59,35 +59,6 @@ main();
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
 
-## File uploads
-
-Request parameters that correspond to file uploads can be passed in many different forms:
-
-- `File` (or an object with the same structure)
-- a `fetch` `Response` (or an object with the same structure)
-- an `fs.ReadStream`
-- the return value of our `toFile` helper
-
-```ts
-import fs from 'fs';
-import TestTewst, { toFile } from 'test-tewst';
-
-const client = new TestTewst();
-
-// If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await client.pets.uploadImage(0, { image: fs.createReadStream('/path/to/file') });
-
-// Or if you have the web `File` API you can pass a `File` instance:
-await client.pets.uploadImage(0, { image: new File(['my bytes'], 'file') });
-
-// You can also pass a `fetch` `Response`:
-await client.pets.uploadImage(0, { image: await fetch('https://somesite/file') });
-
-// Finally, if none of the above are convenient, you can use our `toFile` helper:
-await client.pets.uploadImage(0, { image: await toFile(Buffer.from('my bytes'), 'file') });
-await client.pets.uploadImage(0, { image: await toFile(new Uint8Array([0, 1, 2]), 'file') });
-```
-
 ## Handling errors
 
 When the library is unable to connect to the API,
@@ -111,7 +82,7 @@ async function main() {
 main();
 ```
 
-Error codes are as followed:
+Error codes are as follows:
 
 | Status Code | Error Type                 |
 | ----------- | -------------------------- |
@@ -377,7 +348,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/test-tewst-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/AaronWar/stainlessTest/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
@@ -386,7 +357,7 @@ TypeScript >= 4.9 is supported.
 The following runtimes are supported:
 
 - Web browsers (Up-to-date Chrome, Firefox, Safari, Edge, and more)
-- Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
+- Node.js 20 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
 - Deno v1.28.0 or higher.
 - Bun 1.0 or later.
 - Cloudflare Workers.
